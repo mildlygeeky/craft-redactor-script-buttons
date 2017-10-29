@@ -1,0 +1,47 @@
+{
+    "name": "mildlygeeky/craft-redactor-script-buttons",
+    "description": "Adds superscript and subscript buttons to Redactor in Craft 3.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "craft redactor script buttons"
+    ],
+    "support": {
+        "docs": "https://github.com/mildlygeeky/craft-redactor-script-buttons/blob/master/README.md",
+        "issues": "https://github.com/mildlygeeky/craft-redactor-script-buttons/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mildly Geeky, Inc.",
+            "homepage": "https://mildlygeeky.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "~3.0.0-beta.23"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "mildlygeeky\\craftredactorscriptbuttons\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Craft Redactor Script Buttons",
+        "handle": "craft-redactor-script-buttons",
+        "schemaVersion": "1.0.0",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/mildlygeeky/craft-redactor-script-buttons/master/CHANGELOG.md",
+        "class": "mildlygeeky\\craftredactorscriptbuttons\\CraftRedactorScriptButtons"
+    }
+}
