@@ -40,7 +40,7 @@ class CraftRedactorScriptButtons extends Plugin
         Event::on(
             RichText::class,
             RichText::EVENT_REGISTER_REDACTOR_PLUGIN,
-            function (RegisterRedactorPluginEvent $event) {
+            function(RegisterRedactorPluginEvent $event) {
                 Craft::trace(
                     'RichText::EVENT_REGISTER_REDACTOR_PLUGIN',
                     'redactorscriptbuttons'
@@ -53,7 +53,7 @@ class CraftRedactorScriptButtons extends Plugin
 
         Craft::info(
             Craft::t(
-                'redactor-script-buttons',
+                'craft-redactor-script-buttons',
                 '{name} plugin loaded',
                 ['name' => $this->name]
             ),
