@@ -12,9 +12,8 @@ namespace mildlygeeky\craftredactorscriptbuttons;
 
 use Craft;
 use craft\base\Plugin;
-use craft\fields\RichText;
-use craft\events\RegisterRedactorPluginEvent;
-
+use craft\redactor\events\RegisterPluginPathsEvent;
+use craft\redactor\Field as RichText;
 use yii\base\Event;
 
 /**
@@ -36,28 +35,18 @@ class CraftRedactorScriptButtons extends Plugin
         parent::init();
         self::$plugin = $this;
 
-        // Handler: RichText::EVENT_REGISTER_REDACTOR_PLUGIN
-        Event::on(
-            RichText::class,
-            RichText::EVENT_REGISTER_REDACTOR_PLUGIN,
-            function(RegisterRedactorPluginEvent $event) {
-                Craft::trace(
-                    'RichText::EVENT_REGISTER_REDACTOR_PLUGIN',
-                    'redactorscriptbuttons'
-                );
-                if ($event->plugin == 'scriptbuttons') {
+        if (Craft::$app->getPlugins()->getPlugin('redactor')) {
+            Event::on(
+                RichText::class,
+                RichText::EVENT_REGISTER_PLUGIN_PATHS,
+                function (RegisterPluginPathsEvent $event) {
+                    $src            = Craft::getAlias('@mildlygeeky/craftredactorscriptbuttons')
+                                      . DIRECTORY_SEPARATOR
+                                      . 'resources';
+                    $event->paths[] = $src;
                     Craft::$app->getView()->registerAssetBundle(RedactorScriptsAsset::class);
                 }
-            }
-        );
-
-        Craft::info(
-            Craft::t(
-                'craft-redactor-script-buttons',
-                '{name} plugin loaded',
-                ['name' => $this->name]
-            ),
-            __METHOD__
-        );
+            );
+        }
     }
 }

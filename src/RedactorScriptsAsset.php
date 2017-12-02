@@ -3,7 +3,7 @@ namespace mildlygeeky\craftredactorscriptbuttons;
 
 use craft\web\AssetBundle;
 use craft\web\assets\cp\CpAsset;
-use craft\web\assets\redactor\RedactorAsset;
+use craft\redactor\assets\redactor\RedactorAsset;
 
 class RedactorScriptsAsset extends AssetBundle
 {
@@ -15,7 +15,7 @@ class RedactorScriptsAsset extends AssetBundle
             RedactorAsset::class,
         ];
         $this->js = [
-            'script.js'
+            'scriptbuttons.js'
         ];
         parent::init();
     }
