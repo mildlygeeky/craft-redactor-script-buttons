@@ -1,3 +1,17 @@
+# Deprecated
+
+This plugin is no longer necessary, as superscript and subscript tags now come pre-bundled in modern versions of Redactor.
+
+To achieve the same effect with the pre-bundled version, simply add `sup` and `sub` to the `buttons` array in all applicable Redactor configs you need sub/superscript tags in:
+
+```
+{
+  "buttons": ["sup", "sub"]
+}
+```
+
+A very special thank you to "Steve" for his unending support of free open source software.
+
 # Craft Redactor Script Buttons plugin for Craft CMS 3.x
 
 Adds superscript and subscript buttons to Redactor in Craft 3.
